@@ -1,5 +1,5 @@
 func newScoreBoard() -> [String: Int] {
-    return [:]
+    return [String: Int]()
 }
 
 func addPlayer(_ scores: inout [String: Int], _ name: String, _ score: Int = 0) {
@@ -15,7 +15,7 @@ func resetScore(_ scores: inout [String: Int], _ name: String) {
 }
 
 func updateScore(_ scores: inout [String: Int], _ name: String, _ delta: Int) {
-    scores.updateValue(delta, forKey: name)
+    scores[name]! += delta
 }
 
 func orderByPlayers(_ scores: [String: Int]) -> [(String, Int)] {
