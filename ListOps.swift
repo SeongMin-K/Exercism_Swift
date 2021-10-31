@@ -40,8 +40,8 @@ struct ListOps {
 
     static func foldRight<T>(_ list: [T], accumulated: T, combine: (T, T) -> T) -> T {
         var result = accumulated
-        for i in 1...list.count {
-            let item = list[list.count - i]
+        for i in 0..<list.count {
+            let item = list[list.count - 1 - i]
             result = combine(item, result)
         }
         return result
